@@ -33,7 +33,7 @@ class Chef::Resource
       NAME OWNER GROUP MODE SECLABEL RUN LABEL GOTO TAG
     )
 
-    resource_name :systemd_udev_rules
+    provides :systemd_udev_rules
 
     actions :create, :delete, :disable
     default_action :create
