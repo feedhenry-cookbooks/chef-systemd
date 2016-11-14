@@ -24,7 +24,7 @@ require_relative 'conf'
 class ChefSystemdCookbook
   # base class for management of systemd utilities
   class UtilResource < ChefSystemdCookbook::ConfResource
-    resource_name :systemd_util
+    provides :systemd_util
 
     attribute :drop_in, kind_of: [TrueClass, FalseClass], default: true
     attribute :conf_type, kind_of: Symbol, required: true,

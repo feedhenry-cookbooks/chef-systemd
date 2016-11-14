@@ -30,7 +30,7 @@ class ChefSystemdCookbook
   # resource for configuring systemd-journald
   # http://www.freedesktop.org/software/systemd/man/systemd-journald.service.html
   class JournaldResource < ChefSystemdCookbook::DaemonResource
-    resource_name :systemd_journald
+    provides :systemd_journald
 
     def conf_type(_ = nil)
       :journald
@@ -46,7 +46,7 @@ class ChefSystemdCookbook
   # resource for configuring systemd-logind
   # http://www.freedesktop.org/software/systemd/man/systemd-logind.service.html
   class LogindResource < ChefSystemdCookbook::DaemonResource
-    resource_name :systemd_logind
+    provides :systemd_logind
 
     def conf_type(_ = nil)
       :logind
@@ -62,7 +62,7 @@ class ChefSystemdCookbook
   # resource for configuring systemd-resolved
   # http://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html
   class ResolvedResource < ChefSystemdCookbook::DaemonResource
-    resource_name :systemd_resolved
+    provides :systemd_resolved
 
     def conf_type(_ = nil)
       :resolved
@@ -78,7 +78,7 @@ class ChefSystemdCookbook
   # resource for configuring systemd-timesyncd
   # http://www.freedesktop.org/software/systemd/man/systemd-timesyncd.service.html
   class TimesyncdResource < ChefSystemdCookbook::DaemonResource
-    resource_name :systemd_timesyncd
+    provides :systemd_timesyncd
 
     def conf_type(_ = nil)
       :timesyncd

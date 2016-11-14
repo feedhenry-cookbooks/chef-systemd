@@ -24,7 +24,7 @@ require_relative 'conf'
 # base class for daemon resources
 class ChefSystemdCookbook
   class DaemonResource < ChefSystemdCookbook::ConfResource
-    resource_name :systemd_daemon
+    provides :systemd_daemon
 
     attribute :drop_in, kind_of: [TrueClass, FalseClass], default: true
     attribute :conf_type, kind_of: Symbol, required: true,

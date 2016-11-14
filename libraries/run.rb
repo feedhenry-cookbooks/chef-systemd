@@ -31,7 +31,7 @@ class ChefSystemdCookbook
     include Chef::Mixin::ParamsValidate
     include Systemd::Mixin::DirectiveConversion
 
-    resource_name :systemd_run
+    provides :systemd_run
     identity_attr :unit
 
     actions :run, :stop

@@ -26,7 +26,7 @@ class ChefSystemdCookbook
   # resource for configuring kernel parameters
   # http://man7.org/linux/man-pages/man5/sysctl.d.5.html
   class SysctlResource < Chef::Resource::LWRPBase
-    resource_name :systemd_sysctl
+    provides :systemd_sysctl
 
     actions :create, :delete, :apply
     default_action :create

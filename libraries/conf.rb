@@ -28,7 +28,7 @@ class ChefSystemdCookbook
   class ConfResource < Chef::Resource::LWRPBase
     include Systemd::Mixin::DirectiveConversion
 
-    resource_name :systemd_conf
+    provides :systemd_conf
 
     actions :create, :delete
     default_action :create

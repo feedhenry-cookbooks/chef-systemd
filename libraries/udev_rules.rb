@@ -33,7 +33,7 @@ class ChefSystemdCookbook
       NAME OWNER GROUP MODE SECLABEL RUN LABEL GOTO TAG
     ).freeze
 
-    resource_name :systemd_udev_rules
+    provides :systemd_udev_rules
 
     actions :create, :delete, :disable
     default_action :create

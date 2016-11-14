@@ -28,7 +28,7 @@ class ChefSystemdCookbook
   # resource for managing systemd-bootchart
   # http://www.freedesktop.org/software/systemd/man/systemd-bootchart.html
   class BootchartResource < ChefSystemdCookbook::UtilResource
-    resource_name :systemd_bootchart
+    provides :systemd_bootchart
 
     def conf_type(_ = nil)
       :bootchart
@@ -40,7 +40,7 @@ class ChefSystemdCookbook
   # resource for managing systemd-coredump
   # http://www.freedesktop.org/software/systemd/man/systemd-coredump.html
   class CoredumpResource < ChefSystemdCookbook::UtilResource
-    resource_name :systemd_coredump
+    provides :systemd_coredump
 
     def conf_type(_ = nil)
       :coredump
@@ -52,7 +52,7 @@ class ChefSystemdCookbook
   # resource for managing systemd-sleep
   # http://www.freedesktop.org/software/systemd/man/systemd-sleep.html
   class SleepResource < ChefSystemdCookbook::UtilResource
-    resource_name :systemd_sleep
+    provides :systemd_sleep
 
     def conf_type(_ = nil)
       :sleep
@@ -64,7 +64,7 @@ class ChefSystemdCookbook
   # resource for managing systemd system mode defaults
   # http://www.freedesktop.org/software/systemd/man/systemd-system.conf.html
   class SystemResource < ChefSystemdCookbook::UtilResource
-    resource_name :systemd_system
+    provides :systemd_system
 
     def conf_type(_ = nil)
       :system
@@ -80,7 +80,7 @@ class ChefSystemdCookbook
   # resource for managing systemd user mode defaults
   # http://www.freedesktop.org/software/systemd/man/systemd-user.conf.html
   class UserResource < ChefSystemdCookbook::UtilResource
-    resource_name :systemd_user
+    provides :systemd_user
 
     def conf_type(_ = nil)
       :user
