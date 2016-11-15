@@ -85,7 +85,12 @@ class ChefSystemdCookbook
   # resource for configuration of systemd service units
   # http://www.freedesktop.org/software/systemd/man/systemd.service.html
   class ServiceResource < ChefSystemdCookbook::UnitResource
-    provides :systemd_service
+
+    if Chef::VersionConstraint.new(">= 12.0").include? Chef::VERSION
+      resource_name :systemd_service
+    else
+      provides :systemd_service
+    end
 
     def conf_type(_ = nil)
       :service
